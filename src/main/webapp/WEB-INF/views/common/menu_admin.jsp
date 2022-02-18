@@ -22,7 +22,7 @@
 					<li><a
 						href="${pageContext.request.contextPath}/admin/category">List of categories</a></li>
 					<li><a href="${pageContext.request.contextPath}/admin/image">List of images</a></li>
-					<li><a href="${pageContext.request.contextPath}/admin/brand" target="">List of brands</a></li>
+					<li><a href="${pageContext.request.contextPath}/admin/brand/listBrand" target="">List of brands</a></li>
 					<li><a href="${pageContext.request.contextPath}/admin/targetedCustomer" target="">List of target customers</a></li>
 					<li><a href="${pageContext.request.contextPath}/admin/productColor" target="">List of colors</a></li>
 					<li><a href="${pageContext.request.contextPath}/admin/productMaterial" target="">List of materials</a></li>

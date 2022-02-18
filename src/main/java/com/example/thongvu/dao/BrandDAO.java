@@ -14,4 +14,12 @@ import com.example.thongvu.entity.Brand;
 public interface BrandDAO {
 
 	public List<Brand> listBrand();
+	
+	public boolean createBrand(Brand brand);
+	
+	public Brand getBrandById(Integer brandId);
+	
+	public boolean editBrand(Brand brand);
+	
+	public boolean deleteBrand(Integer brandId);
 }

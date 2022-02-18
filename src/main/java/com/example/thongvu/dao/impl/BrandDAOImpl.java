@@ -28,4 +28,49 @@ public class BrandDAOImpl implements BrandDAO {
 		return brandRepository.findAll();
 	}
 
+	@Override
+	public boolean createBrand(Brand brand) {
+		// TODO Auto-generated method stub
+		try {
+			brandRepository.save(brand);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+			return false;
+		}
+	}
+
+	@Override
+	public boolean editBrand(Brand brand) {
+		// TODO Auto-generated method stub
+		try {
+			brandRepository.save(brand);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+			return false;
+		}
+	}
+
+	@Override
+	public Brand getBrandById(Integer brandId) {
+		// TODO Auto-generated method stub
+		return brandRepository.getById(brandId);
+	}
+
+	@Override
+	public boolean deleteBrand(Integer brandId) {
+		// TODO Auto-generated method stub
+		try {
+			brandRepository.deleteById(brandId);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+			return false;
+		}
+	}
+
 }

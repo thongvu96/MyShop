@@ -11,7 +11,7 @@
 <div class="x_content">
 <h4 style="color: red;">${msg}</h4>
 	<button type="button" class="btn btn-primary"
-		onclick="location.href='${pageContext.request.contextPath}/admin/brand/create'">Add new brands</button>
+		onclick="location.href='${pageContext.request.contextPath}/admin/brand/createBrand'">Add new brands</button>
 		<br><br>
 	<table id="datatable-buttons" class="table table-striped table-bordered">
 		<thead>
@@ -28,10 +28,10 @@
 					<td>${brand.brandId}</td>
 					<td>${brand.brandName}</td>
 					<td><a
-						href="${pageContext.request.contextPath}/admin/brand/edit/${brand.brandId}"
+						href="${pageContext.request.contextPath}/admin/brand/editBrand/${brand.brandId}"
 						class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit
 					</a> <a
-						href="${pageContext.request.contextPath}/admin/brand/delete/${brand.brandId}"
+						href="${pageContext.request.contextPath}/admin/brand/deleteBrand/${brand.brandId}"
 						class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i>
 							Delete </a></td>
 				</tr>

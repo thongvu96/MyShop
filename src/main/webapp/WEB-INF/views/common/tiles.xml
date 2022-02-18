@@ -16,14 +16,35 @@
 			value="/WEB-INF/views/common/footer_admin.jsp" />
 	</definition>
 	
-	<!-- START Admin List Brand -->
+	<!-- START Admin Brand -->
 	<definition name="listBrand"
 		extends="base.definition.admin">
-		<put-attribute name="title" value="Brand" />
+		<put-attribute name="title" value="List Brand" />
 		<put-attribute name="content"
 			value="/WEB-INF/views/admin/brand/listBrand.jsp" />
 	</definition>
-	<!-- END Admin List Brand -->
+	
+	<definition name="createBrand"
+		extends="base.definition.admin">
+		<put-attribute name="title" value="Create Brand" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/admin/brand/createBrand.jsp" />
+	</definition>
+	
+	<definition name="editBrand"
+		extends="base.definition.admin">
+		<put-attribute name="title" value="Edit Brand" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/admin/brand/editBrand.jsp" />
+	</definition>
+	
+	<definition name="deleteBrand"
+		extends="base.definition.admin">
+		<put-attribute name="title" value="Delete Brand" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/admin/brand/deleteBrand.jsp" />
+	</definition>
+	<!-- END Admin Brand -->
 
 </tiles-definitions>
     
