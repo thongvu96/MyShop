@@ -16,6 +16,14 @@
 			value="/WEB-INF/views/common/footer_admin.jsp" />
 	</definition>
 	
+	<!-- START Admin Home -->
+	<definition name="homeAdmin" extends="base.definition.admin">
+		<put-attribute name="title" value="Home Admin" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/homeAdmin.jsp" />
+	</definition>
+	<!-- END Admin Home -->
+	
 	<!-- START Admin Brand -->
 	<definition name="listBrand"
 		extends="base.definition.admin">
@@ -45,6 +53,15 @@
 			value="/WEB-INF/views/admin/brand/deleteBrand.jsp" />
 	</definition>
 	<!-- END Admin Brand -->
+	
+	<!-- START ADMIN MATERIAL -->
+	<definition name="listMaterial"
+		extends="base.definition.admin">
+		<put-attribute name="title" value="List Material" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/admin/material/listMaterial.jsp" />
+	</definition>
+	<!-- END ADMIN MATERIAL -->
 
 </tiles-definitions>
     

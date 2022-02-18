@@ -25,7 +25,7 @@
 					<li><a href="${pageContext.request.contextPath}/admin/brand/listBrand" target="">List of brands</a></li>
 					<li><a href="${pageContext.request.contextPath}/admin/targetedCustomer" target="">List of target customers</a></li>
 					<li><a href="${pageContext.request.contextPath}/admin/productColor" target="">List of colors</a></li>
-					<li><a href="${pageContext.request.contextPath}/admin/productMaterial" target="">List of materials</a></li>
+					<li><a href="${pageContext.request.contextPath}/admin/material/listMaterial" target="">List of materials</a></li>
 					<li><a href="${pageContext.request.contextPath}/admin/shoeSole" target="">List of soles</a></li>
 				</ul></li>
 			<%-- <li><a><i class="fa fa-edit"></i> Category <span
