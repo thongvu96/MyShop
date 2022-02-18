@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+    "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+    "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<!-- ADMIN PAGE -->
+	<definition name="base.definition.admin"
+		template="/WEB-INF/views/common/classic_admin.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/common/menu_admin.jsp" />
+		<put-attribute name="navigation"
+			value="/WEB-INF/views/common/navigation_admin.jsp" />
+		<put-attribute name="content" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/common/footer_admin.jsp" />
+	</definition>
+	
+	<!-- START Admin List Brand -->
+	<definition name="listBrand"
+		extends="base.definition.admin">
+		<put-attribute name="title" value="Brand" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/admin/brand/listBrand.jsp" />
+	</definition>
+	<!-- END Admin List Brand -->
+
+</tiles-definitions>
+    

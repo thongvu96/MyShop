@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.thongvu.service.BrandService;
@@ -23,14 +24,11 @@ public class BrandController {
 	@Autowired
 	BrandService brandService;
 	
-	@RequestMapping(value = "/listBrand")
+	@RequestMapping(value = "/listBrand", method = RequestMethod.GET)
 	public ModelAndView listBrand() {
 		ModelAndView mav = new ModelAndView("listBrand");
 		List<BrandVO> listBrandVO = brandService.listBrandVO();
 		mav.addObject("listBrand", listBrandVO);
-		for (BrandVO vo : listBrandVO) {
-			System.out.println(vo.getBrandId() + "--" + vo.getBrandName());
-		}
 		return mav;
 	}
 }
