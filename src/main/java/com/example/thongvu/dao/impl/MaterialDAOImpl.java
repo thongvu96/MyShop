@@ -38,5 +38,22 @@ public class MaterialDAOImpl implements MaterialDAO {
 			return false;
 		}
 	}
+	@Override
+	public Material getMaterialById(Integer materialId) {
+		// TODO Auto-generated method stub
+		return materialRepository.getById(materialId);
+	}
+	@Override
+	public boolean editMaterial(Material material) {
+		// TODO Auto-generated method stub
+		try {
+			materialRepository.save(material);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+			return false;
+		}
+	}
 
 }

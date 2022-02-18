@@ -16,4 +16,8 @@ public interface MaterialService {
 	public List<MaterialVO> listMaterial();
 	
 	public boolean createMaterial(MaterialVO materialVO);
+	
+	public MaterialVO getMaterialById(Integer materialId);
+	
+	public boolean editMaterial(MaterialVO materialVO);
 }

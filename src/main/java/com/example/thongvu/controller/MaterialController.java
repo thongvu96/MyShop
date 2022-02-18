@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -50,6 +51,28 @@ public class MaterialController {
 		} else {
 			mav.addObject("msg", "Not yet added. Add again or report to the technical department!");
 			createMaterial(mav);
+		}
+		return mav;
+	}
+	
+	@RequestMapping(value = "/editMaterial/{materialId}", method = RequestMethod.GET)
+	public ModelAndView editMaterial(@PathVariable(value = "materialId") Integer materialId, ModelAndView mav) {
+		mav.setViewName("editMaterial");
+		MaterialVO materialVO = materialService.getMaterialById(materialId);
+		mav.addObject("materialVO", materialVO);
+		return mav;
+	}
+	
+	@RequestMapping(value = "/editMaterial", method = RequestMethod.POST)
+	public ModelAndView editMaterial(@ModelAttribute("materialVO") MaterialVO materialVO) {
+		ModelAndView mav = new ModelAndView();
+		boolean check = materialService.editMaterial(materialVO);
+		if (check) {
+			mav.addObject("msg", "Edit Success!!!");
+			listMaterial(mav);
+		} else {
+			mav.addObject("msg", "Not yet added. Edit again or report to the technical department!");
+			editMaterial(materialVO.getMaterialId(), mav);
 		}
 		return mav;
 	}

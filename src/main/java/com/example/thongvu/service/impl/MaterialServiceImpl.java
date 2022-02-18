@@ -54,4 +54,21 @@ public class MaterialServiceImpl implements MaterialService {
 		material.setMaterialName(materialVO.getMaterialName());
 	}
 
+	@Override
+	public MaterialVO getMaterialById(Integer materialId) {
+		// TODO Auto-generated method stub
+		Material material = materialDAO.getMaterialById(materialId);
+		MaterialVO materialVO = new MaterialVO();
+		convertPropertiesToDisp(material, materialVO);
+		return materialVO;
+	}
+
+	@Override
+	public boolean editMaterial(MaterialVO materialVO) {
+		// TODO Auto-generated method stub
+		Material material = new Material();
+		convertPropertiesToDB(material, materialVO);
+		return materialDAO.editMaterial(material);
+	}
+
 }
