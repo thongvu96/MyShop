@@ -26,5 +26,17 @@ public class MaterialDAOImpl implements MaterialDAO {
 		// TODO Auto-generated method stub
 		return materialRepository.findAll();
 	}
+	@Override
+	public boolean createMaterial(Material material) {
+		// TODO Auto-generated method stub
+		try {
+			materialRepository.save(material);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+			return false;
+		}
+	}
 
 }

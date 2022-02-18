@@ -61,6 +61,13 @@
 		<put-attribute name="content"
 			value="/WEB-INF/views/admin/material/listMaterial.jsp" />
 	</definition>
+	
+	<definition name="createMaterial"
+		extends="base.definition.admin">
+		<put-attribute name="title" value="Create Material" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/admin/material/createMaterial.jsp" />
+	</definition>
 	<!-- END ADMIN MATERIAL -->
 
 </tiles-definitions>

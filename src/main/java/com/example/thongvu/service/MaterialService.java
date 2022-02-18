@@ -14,4 +14,6 @@ import com.example.thongvu.vo.MaterialVO;
 public interface MaterialService {
 	
 	public List<MaterialVO> listMaterial();
+	
+	public boolean createMaterial(MaterialVO materialVO);
 }

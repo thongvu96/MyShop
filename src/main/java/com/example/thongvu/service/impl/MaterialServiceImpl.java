@@ -36,9 +36,22 @@ public class MaterialServiceImpl implements MaterialService {
 		return listMaterialVO;
 	}
 	
+	@Override
+	public boolean createMaterial(MaterialVO materialVO) {
+		// TODO Auto-generated method stub
+		Material material = new Material();
+		convertPropertiesToDB(material, materialVO);
+		return materialDAO.createMaterial(material);
+	}
+	
 	private void convertPropertiesToDisp(Material material, MaterialVO materialVO) {
 		materialVO.setMaterialId(material.getMaterialId());
 		materialVO.setMaterialName(material.getMaterialName());
+	}
+
+	private void convertPropertiesToDB(Material material, MaterialVO materialVO) {
+		material.setMaterialId(materialVO.getMaterialId());
+		material.setMaterialName(materialVO.getMaterialName());
 	}
 
 }

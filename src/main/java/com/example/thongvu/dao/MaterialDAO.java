@@ -14,4 +14,6 @@ import com.example.thongvu.entity.Material;
 public interface MaterialDAO {
 
 	public List<Material> listMaterial();
+	
+	public boolean createMaterial(Material material);
 }
