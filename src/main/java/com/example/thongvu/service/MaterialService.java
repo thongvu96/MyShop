@@ -20,4 +20,6 @@ public interface MaterialService {
 	public MaterialVO getMaterialById(Integer materialId);
 	
 	public boolean editMaterial(MaterialVO materialVO);
+	
+	public boolean deleteMaterial(Integer materialId);
 }

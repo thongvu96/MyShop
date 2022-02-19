@@ -55,5 +55,17 @@ public class MaterialDAOImpl implements MaterialDAO {
 			return false;
 		}
 	}
+	@Override
+	public boolean deleteMaterial(Integer materialId) {
+		// TODO Auto-generated method stub
+		try {
+			materialRepository.deleteById(materialId);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+			return false;
+		}
+	}
 
 }

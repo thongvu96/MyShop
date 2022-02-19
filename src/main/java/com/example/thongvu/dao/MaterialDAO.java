@@ -20,4 +20,6 @@ public interface MaterialDAO {
 	public Material getMaterialById(Integer materialId);
 	
 	public boolean editMaterial(Material material);
+	
+	public boolean deleteMaterial(Integer materialId);
 }

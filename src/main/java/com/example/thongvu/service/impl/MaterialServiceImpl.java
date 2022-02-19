@@ -71,4 +71,10 @@ public class MaterialServiceImpl implements MaterialService {
 		return materialDAO.editMaterial(material);
 	}
 
+	@Override
+	public boolean deleteMaterial(Integer materialId) {
+		// TODO Auto-generated method stub
+		return materialDAO.deleteMaterial(materialId);
+	}
+
 }

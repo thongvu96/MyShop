@@ -76,4 +76,26 @@ public class MaterialController {
 		}
 		return mav;
 	}
+	
+	@RequestMapping(value = "/deleteMaterial/{materialId}", method = RequestMethod.GET)
+	public ModelAndView deleteMaterial(@PathVariable(value = "materialId") Integer materialId, ModelAndView mav) {
+		mav.setViewName("deleteMaterial");
+		MaterialVO materialVO = materialService.getMaterialById(materialId);
+		mav.addObject("materialVO", materialVO);
+		return mav;
+	}
+	
+	@RequestMapping(value = "/deleteMaterial", method = RequestMethod.POST)
+	public ModelAndView deleteMaterial(@ModelAttribute("materialVO") MaterialVO materialVO) {
+		ModelAndView mav = new ModelAndView();
+		boolean check = materialService.deleteMaterial(materialVO.getMaterialId());
+		if (check) {
+			mav.addObject("msg", "Delete Success!!!");
+			listMaterial(mav);
+		} else {
+			mav.addObject("msg", "Not yet added. Delete again or report to the technical department!");
+			deleteMaterial(materialVO.getMaterialId(), mav);
+		}
+		return mav;
+	}
 }
