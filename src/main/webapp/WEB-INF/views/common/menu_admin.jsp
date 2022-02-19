@@ -20,7 +20,7 @@
 				<ul class="nav child_menu">
 					<li><a href="${pageContext.request.contextPath}/admin/product">List of products</a></li>
 					<li><a
-						href="${pageContext.request.contextPath}/admin/category">List of categories</a></li>
+						href="${pageContext.request.contextPath}/admin/category/listCategory">List of categories</a></li>
 					<li><a href="${pageContext.request.contextPath}/admin/image">List of images</a></li>
 					<li><a href="${pageContext.request.contextPath}/admin/brand/listBrand" target="">List of brands</a></li>
 					<li><a href="${pageContext.request.contextPath}/admin/targetedCustomer" target="">List of target customers</a></li>
