@@ -16,4 +16,8 @@ public interface CategoryDAO {
 	public List<Category> listCategory();
 	
 	public boolean createCategory(Category category);
+	
+	public Category getCategoryById(Integer categoryId);
+	
+	public boolean editCategory(Category category);
 }

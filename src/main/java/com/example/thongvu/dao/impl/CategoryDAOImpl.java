@@ -41,4 +41,23 @@ public class CategoryDAOImpl implements CategoryDAO {
 		}
 	}
 
+	@Override
+	public Category getCategoryById(Integer categoryId) {
+		// TODO Auto-generated method stub
+		return categoryRepository.getById(categoryId);
+	}
+
+	@Override
+	public boolean editCategory(Category category) {
+		// TODO Auto-generated method stub
+		try {
+			categoryRepository.save(category);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+			return false;
+		}
+	}
+
 }

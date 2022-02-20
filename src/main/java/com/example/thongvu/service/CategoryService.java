@@ -16,4 +16,8 @@ public interface CategoryService {
 	public List<CategoryVO> listCategoryVO();
 	
 	public boolean createCategory(CategoryVO categoryVO);
+	
+	public CategoryVO getCategoryById(Integer categoryId);
+	
+	public boolean editCategory(CategoryVO categoryVO);
 }
