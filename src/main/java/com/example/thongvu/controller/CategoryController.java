@@ -78,4 +78,26 @@ public class CategoryController {
 		}
 		return mav;
 	}
+	
+	@RequestMapping(value = "/deleteCategory/{categoryId}", method = RequestMethod.GET)
+	public ModelAndView deleteCategory(@PathVariable(value = "categoryId") Integer categoryId, ModelAndView mav) {
+		mav.setViewName("deleteCategory");
+		CategoryVO categoryVO = categoryService.getCategoryById(categoryId);
+		mav.addObject("categoryVO", categoryVO);
+		return mav;
+	}
+	
+	@RequestMapping(value = "/deleteCategory", method = RequestMethod.POST)
+	public ModelAndView deleteCategory(@ModelAttribute("categoryVO") CategoryVO categoryVO) {
+		ModelAndView mav = new ModelAndView();
+		boolean check = categoryService.deleteCategory(categoryVO.getCategoryId());
+		if (check) {
+			mav.addObject("msg", "Delete Success!!!");
+			listCategory(mav);
+		} else {
+			mav.addObject("msg", "Not yet added. Delete again or report to the technical department!");
+			deleteCategory(categoryVO.getCategoryId(), mav);
+		}
+		return mav;
+	}
 }

@@ -105,6 +105,13 @@
 		<put-attribute name="content"
 			value="/WEB-INF/views/admin/category/editCategory.jsp" />
 	</definition>
+	
+	<definition name="deleteCategory"
+		extends="base.definition.admin">
+		<put-attribute name="title" value="Delete Category" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/admin/category/deleteCategory.jsp" />
+	</definition>
 	<!-- END ADMIN CATEGORY -->
 
 </tiles-definitions>

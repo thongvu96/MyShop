@@ -73,5 +73,11 @@ public class CategoryServiceImpl implements CategoryService {
 		convertPropertiesToDB(category, categoryVO);
 		return categoryDAO.editCategory(category);
 	}
+
+	@Override
+	public boolean deleteCategory(Integer categoryId) {
+		// TODO Auto-generated method stub
+		return categoryDAO.deleteCategory(categoryId);
+	}
 	
 }

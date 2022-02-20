@@ -20,4 +20,6 @@ public interface CategoryService {
 	public CategoryVO getCategoryById(Integer categoryId);
 	
 	public boolean editCategory(CategoryVO categoryVO);
+	
+	public boolean deleteCategory(Integer categoryId);
 }

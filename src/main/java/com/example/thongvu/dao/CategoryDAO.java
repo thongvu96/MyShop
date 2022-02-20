@@ -20,4 +20,6 @@ public interface CategoryDAO {
 	public Category getCategoryById(Integer categoryId);
 	
 	public boolean editCategory(Category category);
+	
+	public boolean deleteCategory(Integer categoryId);
 }

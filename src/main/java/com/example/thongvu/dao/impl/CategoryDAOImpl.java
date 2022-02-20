@@ -60,4 +60,17 @@ public class CategoryDAOImpl implements CategoryDAO {
 		}
 	}
 
+	@Override
+	public boolean deleteCategory(Integer categoryId) {
+		// TODO Auto-generated method stub
+		try {
+			categoryRepository.deleteById(categoryId);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+			return false;
+		}
+	}
+
 }
