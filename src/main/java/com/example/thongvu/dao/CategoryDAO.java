@@ -14,4 +14,6 @@ import com.example.thongvu.entity.Category;
 public interface CategoryDAO {
 
 	public List<Category> listCategory();
+	
+	public boolean createCategory(Category category);
 }

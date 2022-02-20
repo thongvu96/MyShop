@@ -28,4 +28,17 @@ public class CategoryDAOImpl implements CategoryDAO {
 		return categoryRepository.findAll();
 	}
 
+	@Override
+	public boolean createCategory(Category category) {
+		// TODO Auto-generated method stub
+		try {
+			categoryRepository.save(category);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+			return false;
+		}
+	}
+
 }

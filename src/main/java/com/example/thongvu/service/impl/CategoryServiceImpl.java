@@ -42,5 +42,19 @@ public class CategoryServiceImpl implements CategoryService {
 		categoryVO.setCategoryName(category.getCategoryName());
 		categoryVO.setCategoryDes(category.getCategoryDes());
 	}
+
+	@Override
+	public boolean createCategory(CategoryVO categoryVO) {
+		// TODO Auto-generated method stub
+		Category category = new Category();
+		convertPropertiesToDB(category, categoryVO);
+		return categoryDAO.createCategory(category);
+	}
+	
+	private void convertPropertiesToDB(Category category, CategoryVO categoryVO) {
+		category.setCategoryId(categoryVO.getCategoryId());
+		category.setCategoryName(categoryVO.getCategoryName());
+		category.setCategoryDes(categoryVO.getCategoryDes());
+	}
 	
 }

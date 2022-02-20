@@ -91,6 +91,13 @@
 		<put-attribute name="content"
 			value="/WEB-INF/views/admin/category/listCategory.jsp" />
 	</definition>
+	
+	<definition name="createCategory"
+		extends="base.definition.admin">
+		<put-attribute name="title" value="Create Category" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/admin/category/createCategory.jsp" />
+	</definition>
 	<!-- END ADMIN CATEGORY -->
 
 </tiles-definitions>

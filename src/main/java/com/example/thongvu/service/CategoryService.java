@@ -14,4 +14,6 @@ import com.example.thongvu.vo.CategoryVO;
 public interface CategoryService {
 
 	public List<CategoryVO> listCategoryVO();
+	
+	public boolean createCategory(CategoryVO categoryVO);
 }
