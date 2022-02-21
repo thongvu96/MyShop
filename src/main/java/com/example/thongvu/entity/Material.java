@@ -23,7 +23,7 @@ public class Material {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer materialId;
 	
-	@Column(name = "material_name")
+	@Column(name = "material_name", nullable = false)
 	private String materialName;
 
 	/**

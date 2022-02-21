@@ -23,7 +23,7 @@ public class Brand {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer brandId;
 	
-	@Column(name = "brand_name")
+	@Column(name = "brand_name", nullable = false)
 	private String brandName;
 
 	/**
