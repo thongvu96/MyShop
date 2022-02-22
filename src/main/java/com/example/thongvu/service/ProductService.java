@@ -20,4 +20,6 @@ public interface ProductService {
 	public ProductVO getProductById(Integer productId);
 	
 	public boolean editProduct(ProductVO productVO);
+	
+	public boolean deleteProduct(Integer productId);
 }

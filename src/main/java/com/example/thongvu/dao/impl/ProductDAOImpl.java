@@ -60,4 +60,17 @@ public class ProductDAOImpl implements ProductDAO {
 		}
 	}
 
+	@Override
+	public boolean deleteProduct(Integer productId) {
+		// TODO Auto-generated method stub
+		try {
+			productRepository.deleteById(productId);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+			return false;
+		}
+	}
+
 }

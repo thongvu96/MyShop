@@ -135,6 +135,13 @@
 		<put-attribute name="content"
 			value="/WEB-INF/views/admin/product/editProduct.jsp" />
 	</definition>
+	
+	<definition name="deleteProduct"
+		extends="base.definition.admin">
+		<put-attribute name="title" value="Delete Product" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/admin/product/deleteProduct.jsp" />
+	</definition>
 	<!-- END ADMIN PRODUCT -->
 
 </tiles-definitions>

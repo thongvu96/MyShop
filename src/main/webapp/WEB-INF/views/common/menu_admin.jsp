@@ -18,7 +18,7 @@
 			<li><a><i class="fa fa-clone"></i> Product <span
 					class="fa fa-chevron-down"></span></a>
 				<ul class="nav child_menu">
-					<li><a href="${pageContext.request.contextPath}/admin/product">List of products</a></li>
+					<li><a href="${pageContext.request.contextPath}/admin/product/listProduct">List of products</a></li>
 					<li><a
 						href="${pageContext.request.contextPath}/admin/category/listCategory">List of categories</a></li>
 					<li><a href="${pageContext.request.contextPath}/admin/image">List of images</a></li>

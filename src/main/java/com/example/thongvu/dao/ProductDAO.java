@@ -20,4 +20,6 @@ public interface ProductDAO {
 	public Product getProductById(Integer productId);
 	
 	public boolean editProduct(Product product);
+	
+	public boolean deleteProduct(Integer productId);
 }

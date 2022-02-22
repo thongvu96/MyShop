@@ -81,4 +81,10 @@ public class ProductServiceImpl implements ProductService {
 		convertToDB(product, productVO);
 		return productDAO.editProduct(product);
 	}
+
+	@Override
+	public boolean deleteProduct(Integer productId) {
+		// TODO Auto-generated method stub
+		return productDAO.deleteProduct(productId);
+	}
 }

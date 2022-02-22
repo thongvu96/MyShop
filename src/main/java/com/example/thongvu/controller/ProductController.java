@@ -134,4 +134,25 @@ public class ProductController {
 		return mav;
 	}
 	
+	@RequestMapping(value = "/deleteProduct/{productId}", method = RequestMethod.GET)
+	public ModelAndView deleteProduct(@PathVariable(value = "productId") Integer productId, ModelAndView mav) {
+		mav.setViewName("deleteProduct");
+		ProductVO productVO = productService.getProductById(productId);
+		mav.addObject("productVO", productVO);
+		return mav;
+	}
+	
+	@RequestMapping(value = "/deleteProduct", method = RequestMethod.POST)
+	public ModelAndView deleteBrand(@ModelAttribute("productVO") ProductVO productVO) {
+		ModelAndView mav = new ModelAndView();
+		boolean check = productService.deleteProduct(productVO.getProductId());
+		if (check) {
+			mav.addObject("msg", "Delete Success!!!");
+			listProduct(mav);
+		} else {
+			mav.addObject("msg", "Not yet added. Delete again or report to the technical department!");
+			deleteProduct(productVO.getProductId(), mav);
+		}
+		return mav;
+	}
 }
