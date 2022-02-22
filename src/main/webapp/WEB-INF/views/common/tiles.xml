@@ -121,6 +121,13 @@
 		<put-attribute name="content"
 			value="/WEB-INF/views/admin/product/listProduct.jsp" />
 	</definition>	
+	
+	<definition name="createProduct"
+		extends="base.definition.admin">
+		<put-attribute name="title" value="Create Product" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/admin/product/createProduct.jsp" />
+	</definition>
 	<!-- END ADMIN PRODUCT -->
 
 </tiles-definitions>

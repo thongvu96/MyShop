@@ -14,4 +14,6 @@ import com.example.thongvu.vo.ProductVO;
 public interface ProductService {
 	
 	public List<ProductVO> listProduct();
+	
+	public boolean createProduct(ProductVO productVO);
 }

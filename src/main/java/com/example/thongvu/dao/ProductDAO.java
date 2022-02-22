@@ -14,4 +14,6 @@ import com.example.thongvu.entity.Product;
 public interface ProductDAO {
 
 	public List<Product> listProduct();
+	
+	public boolean createProduct(Product product);
 }

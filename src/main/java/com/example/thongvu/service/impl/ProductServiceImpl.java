@@ -46,6 +46,22 @@ public class ProductServiceImpl implements ProductService {
 		MaterialServiceImpl.convertPropertiesToDisp(product.getMaterial(), productVO.getProMaterial());
 		CategoryServiceImpl.convertPropertiesToDisp(product.getCategory(), productVO.getProCategory());
 	}
+
+	@Override
+	public boolean createProduct(ProductVO productVO) {
+		// TODO Auto-generated method stub
+		Product product = new Product();
+		convertToDB(product, productVO);
+		return productDAO.createProduct(product);
+	}
 	
-	
+	private void convertToDB(Product product, ProductVO productVO) {
+		product.setProductId(productVO.getProductId());
+		product.setProductName(productVO.getProductName());
+		product.setProductPrice(productVO.getProductPrice());
+		product.setProductDes(productVO.getProductDes());
+		BrandServiceImpl.convertPropertiesToDB(product.getBrand(), productVO.getProBrand());
+		MaterialServiceImpl.convertPropertiesToDB(product.getMaterial(), productVO.getProMaterial());
+		CategoryServiceImpl.convertPropertiesToDB(product.getCategory(), productVO.getProCategory());
+	}
 }

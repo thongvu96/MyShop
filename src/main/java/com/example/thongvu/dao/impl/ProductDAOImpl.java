@@ -28,4 +28,17 @@ public class ProductDAOImpl implements ProductDAO {
 		return productRepository.findAll();
 	}
 
+	@Override
+	public boolean createProduct(Product product) {
+		// TODO Auto-generated method stub
+		try {
+			productRepository.save(product);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+			return false;
+		}
+	}
+
 }
