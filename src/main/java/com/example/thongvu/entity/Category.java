@@ -3,11 +3,14 @@
  */
 package com.example.thongvu.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -28,6 +31,23 @@ public class Category {
 	
 	@Column(name = "category_description", nullable = false)
 	private String categoryDes;
+	
+	@OneToMany(mappedBy = "category")
+	private List<Product> listProduct;
+
+	/**
+	 * @return the listProduct
+	 */
+	public List<Product> getListProduct() {
+		return listProduct;
+	}
+
+	/**
+	 * @param listProduct the listProduct to set
+	 */
+	public void setListProduct(List<Product> listProduct) {
+		this.listProduct = listProduct;
+	}
 
 	public Integer getCategoryId() {
 		return categoryId;

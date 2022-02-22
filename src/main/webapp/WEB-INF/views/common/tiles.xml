@@ -113,6 +113,15 @@
 			value="/WEB-INF/views/admin/category/deleteCategory.jsp" />
 	</definition>
 	<!-- END ADMIN CATEGORY -->
+	
+	<!-- START ADMIN PRODUCT -->
+	<definition name="listProduct"
+		extends="base.definition.admin">
+		<put-attribute name="title" value="List Product" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/admin/product/listProduct.jsp" />
+	</definition>	
+	<!-- END ADMIN PRODUCT -->
 
 </tiles-definitions>
     

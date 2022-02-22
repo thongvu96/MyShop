@@ -62,12 +62,12 @@ public class BrandServiceImpl implements BrandService {
 		return brandVO;
 	}
 	
-	private void convertPropertiesToDisp(Brand brand, BrandVO brandVO) {
+	public static void convertPropertiesToDisp(Brand brand, BrandVO brandVO) {
 		brandVO.setBrandId(brand.getBrandId());
 		brandVO.setBrandName(brand.getBrandName());
 	}
 	
-	private void convertPropertiesToDB(Brand brand, BrandVO brandVO) {
+	public static void convertPropertiesToDB(Brand brand, BrandVO brandVO) {
 		brand.setBrandId(brandVO.getBrandId());
 		brand.setBrandName(brandVO.getBrandName());
 	}

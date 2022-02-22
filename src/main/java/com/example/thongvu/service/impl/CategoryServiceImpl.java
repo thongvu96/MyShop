@@ -37,7 +37,7 @@ public class CategoryServiceImpl implements CategoryService {
 		return listCategoryVO;
 	}
 	
-	private void convertPropertiesToDisp(Category category, CategoryVO categoryVO) {
+	public static void convertPropertiesToDisp(Category category, CategoryVO categoryVO) {
 		categoryVO.setCategoryId(category.getCategoryId());
 		categoryVO.setCategoryName(category.getCategoryName());
 		categoryVO.setCategoryDes(category.getCategoryDes());
@@ -51,7 +51,7 @@ public class CategoryServiceImpl implements CategoryService {
 		return categoryDAO.createCategory(category);
 	}
 	
-	private void convertPropertiesToDB(Category category, CategoryVO categoryVO) {
+	public static void convertPropertiesToDB(Category category, CategoryVO categoryVO) {
 		category.setCategoryId(categoryVO.getCategoryId());
 		category.setCategoryName(categoryVO.getCategoryName());
 		category.setCategoryDes(categoryVO.getCategoryDes());

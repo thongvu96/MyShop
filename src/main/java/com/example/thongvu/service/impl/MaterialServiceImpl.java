@@ -44,12 +44,12 @@ public class MaterialServiceImpl implements MaterialService {
 		return materialDAO.createMaterial(material);
 	}
 	
-	private void convertPropertiesToDisp(Material material, MaterialVO materialVO) {
+	public static void convertPropertiesToDisp(Material material, MaterialVO materialVO) {
 		materialVO.setMaterialId(material.getMaterialId());
 		materialVO.setMaterialName(material.getMaterialName());
 	}
 
-	private void convertPropertiesToDB(Material material, MaterialVO materialVO) {
+	public static void convertPropertiesToDB(Material material, MaterialVO materialVO) {
 		material.setMaterialId(materialVO.getMaterialId());
 		material.setMaterialName(materialVO.getMaterialName());
 	}
