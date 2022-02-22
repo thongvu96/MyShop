@@ -64,4 +64,21 @@ public class ProductServiceImpl implements ProductService {
 		MaterialServiceImpl.convertPropertiesToDB(product.getMaterial(), productVO.getProMaterial());
 		CategoryServiceImpl.convertPropertiesToDB(product.getCategory(), productVO.getProCategory());
 	}
+
+	@Override
+	public ProductVO getProductById(Integer productId) {
+		// TODO Auto-generated method stub
+		Product product = productDAO.getProductById(productId);
+		ProductVO productVO = new ProductVO();
+		convertToDisp(product, productVO);
+		return productVO;
+	}
+
+	@Override
+	public boolean editProduct(ProductVO productVO) {
+		// TODO Auto-generated method stub
+		Product product = new Product();
+		convertToDB(product, productVO);
+		return productDAO.editProduct(product);
+	}
 }

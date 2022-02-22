@@ -10,6 +10,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -48,16 +49,6 @@ public class ProductController {
 		return mav;
 	}
 	
-	@RequestMapping(value = "/createProduct", method = RequestMethod.GET)
-	public ModelAndView createProduct(ModelAndView mav) {
-		mav.setViewName("createProduct");
-		mav.addObject("productVO", new ProductVO());
-		mav.addObject("mapBrand", listBrand(brandService.listBrandVO()));
-		mav.addObject("mapCategory", listCategory(categoryService.listCategoryVO()));
-		mav.addObject("mapMaterial", listMaterial(materialService.listMaterial()));
-		return mav;
-	}
-	
 	private Map<Integer, String> listBrand(List<BrandVO> listBrand) {
 		Map<Integer, String> mapBrand = new HashMap<Integer, String>();
 		for (BrandVO brandVO : listBrand) {
@@ -82,10 +73,19 @@ public class ProductController {
 		return mapMaterial;
 	}
 	
+	@RequestMapping(value = "/createProduct", method = RequestMethod.GET)
+	public ModelAndView createProduct(ModelAndView mav) {
+		mav.setViewName("createProduct");
+		mav.addObject("productVO", new ProductVO());
+		mav.addObject("mapBrand", listBrand(brandService.listBrandVO()));
+		mav.addObject("mapCategory", listCategory(categoryService.listCategoryVO()));
+		mav.addObject("mapMaterial", listMaterial(materialService.listMaterial()));
+		return mav;
+	}
+	
 	@RequestMapping(value = "/createProduct", method = RequestMethod.POST)
 	public ModelAndView createProduct(@ModelAttribute("productVO") ProductVO productVO) {
 		ModelAndView mav = new ModelAndView();
-		System.out.println(productVO.getProBrand().getBrandId() + "-" + productVO.getProCategory().getCategoryId() + "-" + productVO.getProMaterial().getMaterialId());
 		BrandVO brandVO = brandService.getBrandById(productVO.getProBrand().getBrandId());
 		CategoryVO categoryVO = categoryService.getCategoryById(productVO.getProCategory().getCategoryId());
 		MaterialVO materialVO = materialService.getMaterialById(productVO.getProMaterial().getMaterialId());
@@ -102,4 +102,36 @@ public class ProductController {
 		}
 		return mav;
 	}
+	
+	@RequestMapping(value = "/editProduct/{productId}", method = RequestMethod.GET)
+	public ModelAndView editProduct(@PathVariable(value = "productId") Integer productId, ModelAndView mav) {
+		mav.setViewName("editProduct");
+		ProductVO productVO = productService.getProductById(productId);
+		mav.addObject("productVO", productVO);
+		mav.addObject("mapBrand", listBrand(brandService.listBrandVO()));
+		mav.addObject("mapCategory", listCategory(categoryService.listCategoryVO()));
+		mav.addObject("mapMaterial", listMaterial(materialService.listMaterial()));
+		return mav;
+	}
+		
+	@RequestMapping(value = "/editProduct", method = RequestMethod.POST)
+	public ModelAndView editProduct(@ModelAttribute("productVO") ProductVO productVO) {
+		ModelAndView mav = new ModelAndView();
+		BrandVO brandVO = brandService.getBrandById(productVO.getProBrand().getBrandId());
+		CategoryVO categoryVO = categoryService.getCategoryById(productVO.getProCategory().getCategoryId());
+		MaterialVO materialVO = materialService.getMaterialById(productVO.getProMaterial().getMaterialId());
+		productVO.setProBrand(brandVO);
+		productVO.setProCategory(categoryVO);
+		productVO.setProMaterial(materialVO);
+		boolean check = productService.editProduct(productVO);
+		if (check) {
+			mav.addObject("msg", "Edit Success!!!");
+			listProduct(mav);
+		} else {
+			mav.addObject("msg", "Not yet added. Edit again or report to the technical department!");
+			editProduct(productVO.getProductId(), mav);
+		}
+		return mav;
+	}
+	
 }

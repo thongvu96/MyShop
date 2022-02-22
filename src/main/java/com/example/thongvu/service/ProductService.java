@@ -16,4 +16,8 @@ public interface ProductService {
 	public List<ProductVO> listProduct();
 	
 	public boolean createProduct(ProductVO productVO);
+	
+	public ProductVO getProductById(Integer productId);
+	
+	public boolean editProduct(ProductVO productVO);
 }

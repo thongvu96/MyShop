@@ -16,4 +16,8 @@ public interface ProductDAO {
 	public List<Product> listProduct();
 	
 	public boolean createProduct(Product product);
+	
+	public Product getProductById(Integer productId);
+	
+	public boolean editProduct(Product product);
 }

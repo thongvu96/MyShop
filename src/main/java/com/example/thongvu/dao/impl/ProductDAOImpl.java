@@ -41,4 +41,23 @@ public class ProductDAOImpl implements ProductDAO {
 		}
 	}
 
+	@Override
+	public Product getProductById(Integer productId) {
+		// TODO Auto-generated method stub
+		return productRepository.getById(productId);
+	}
+
+	@Override
+	public boolean editProduct(Product product) {
+		// TODO Auto-generated method stub
+		try {
+			productRepository.save(product);
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+			return false;
+		}
+	}
+
 }
