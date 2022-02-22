@@ -36,15 +36,15 @@ public class Product {
 	
 	@ManyToOne
 	@JoinColumn(name = "brand_id", nullable = false)
-	private Brand brand;
+	private Brand brand = new Brand();
 	
 	@ManyToOne
 	@JoinColumn(name = "material_id", nullable = false)
-	private Material material;
+	private Material material = new Material();
 	
 	@ManyToOne
 	@JoinColumn(name = "category_id", nullable = false)
-	private Category category;
+	private Category category = new Category();
 
 	/**
 	 * @return the productId

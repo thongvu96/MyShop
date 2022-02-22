@@ -17,13 +17,13 @@
 			required="required" />
 		<br>
 		<label for="proCategory">Category *:</label>
-		<form:select id="proCategory" path="proCategory" class="form-control" required="required">
+		<form:select id="proCategory" path="proCategory.categoryId" class="form-control" required="required">
 			<form:option value="" label="Choose" />
 			<form:options items="${mapCategory}" />
 		</form:select>
 		<br>
 		<label for="proBrand">Brand *:</label>
-		<form:select id="proBrand" path="proBrand" class="form-control" required="required">
+		<form:select id="proBrand" path="proBrand.brandId" class="form-control" required="required">
 			<form:option value="" label="Choose" />
 			<form:options items="${mapBrand}" />
 		</form:select>
@@ -41,7 +41,7 @@
 		</form:select>
 		<br> --%>
 		<label for="proMaterial">Material *:</label>
-		<form:select id="proMaterial" path="proMaterial" class="form-control" required="required">
+		<form:select id="proMaterial" path="proMaterial.materialId" class="form-control" required="required">
 			<form:option value="" label="Choose" />
 			<form:options items="${mapMaterial}" />
 		</form:select>

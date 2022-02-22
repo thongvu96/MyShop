@@ -85,6 +85,13 @@ public class ProductController {
 	@RequestMapping(value = "/createProduct", method = RequestMethod.POST)
 	public ModelAndView createProduct(@ModelAttribute("productVO") ProductVO productVO) {
 		ModelAndView mav = new ModelAndView();
+		System.out.println(productVO.getProBrand().getBrandId() + "-" + productVO.getProCategory().getCategoryId() + "-" + productVO.getProMaterial().getMaterialId());
+		BrandVO brandVO = brandService.getBrandById(productVO.getProBrand().getBrandId());
+		CategoryVO categoryVO = categoryService.getCategoryById(productVO.getProCategory().getCategoryId());
+		MaterialVO materialVO = materialService.getMaterialById(productVO.getProMaterial().getMaterialId());
+		productVO.setProBrand(brandVO);
+		productVO.setProCategory(categoryVO);
+		productVO.setProMaterial(materialVO);
 		boolean check = productService.createProduct(productVO);
 		if (check) {
 			mav.addObject("msg", "Create Success!!!");
