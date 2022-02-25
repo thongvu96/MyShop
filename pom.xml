@@ -89,6 +89,13 @@
 			<version>1.0.6</version>
 		</dependency>
 		<!-- END APACHE TILES-->
+		
+		<!-- START SPRING SECURITY-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<!-- END SPRING SECURITY-->
 	</dependencies>
 
 	<build>
