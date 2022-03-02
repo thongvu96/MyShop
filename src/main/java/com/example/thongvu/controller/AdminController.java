@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class AdminController {
 	
-	@RequestMapping(value = {"/", "/homeAdmin", "/admin" })
+	@RequestMapping(value = {"/", "/homePage"})
 	public ModelAndView indexAdmin() {
 		ModelAndView mav = new ModelAndView("homeAdmin");
 		return mav;
